@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<title>Cherokee</title>
+<!-- 
+
+    //   ) )
+   //        / __      ___      __      ___     / ___      ___      ___
+  //        //   ) ) //___) ) //  ) ) //   ) ) //\ \     //___) ) //___) )
+ //        //   / / //       //      //   / / //  \ \   //       //
+((____/ / //   / / ((____   //      ((___/ / //    \ \ ((____   ((____
+
+-->
+
+
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="assets/css/metro-bootstrap.css">
+<link rel="stylesheet" href="assets/css/metro-bootstrap-responsive.css">
+<link rel="stylesheet" href="assets/css/cherokee.css">
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/jquery.widget.min.js"></script>
+<script src="assets/js/metro.min.js"></script>
+<script src="assets/js/metro-stepper.js"></script>
+<script src="assets/js/cherokee.js"></script>
+<script src="assets/js/cherokee_ui.js"></script>
+<!-- <script type="text/javascript" src="assets/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+</head>
+
+<body class="metro">
+
+
+    <div class="container">
+        <h1 class="">
+           Cherokee: <small class="on-right">A Quantum Circuit Synthesizer &amp; Simulator</small>
+        </h1>
+        <hr>
+        <div class="example">
+            <div class="stepper diamond" data-role="stepper" data-steps="3" id="stepper_step" data-start="0"></div>
+
+            <div class="actions">
+                <button class="button primary" data-toggle="modal" data-target="#start" onclick="$('#stepper_step').stepper('next')">Start</button>
+            </div>
+        </div>
+    </div>    
+
+    <div class="row offset4">
+    	<img src="cat.jpg">    	
+    </div>
+   
+
+	<!-- MODALS -->
+
+	<!-- START Modal Start -->
+	<div class="modal fade" id="start" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content ">
+				<div class="modal-header">					
+					<h4 class="modal-title">Step 1: <small class="on-right">Select Number of Qubits and Stages of the Quantum circuit</small></h4>
+				</div>
+				<div class="modal-body">				
+					<div class="" id="billForm">
+						<div class="form-group">
+							<select id="nqubits" class="form-control">
+								<option value="">Number of Qubits</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>
+						<div class="form-group">							
+							<select id="nstages" class="form-control">
+								<option value="">Number of Stages</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.reload()">Cancel</button>
+					<button type="button" class="btn btn-primary" id="next_2">Next</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- START Modal End -->
+	
+	<!-- SECOND Modal START -->
+	<div class="modal fade" id="secondModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<h4 class="modal-title">Step 2: <small class="on-right">Select Quantum Gates for each stage</small></h4>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive">
+							<table class="table table-condensed table-hover" id="circuitTable"></table>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.reload()">Cancel</button>
+					<button type="button" class="btn btn-primary" id="next_3">Simulate</button>
+				</div>
+			</div>
+		</div>
+	</div>		
+	<!--  SECOND MODAL END -->
+	
+	<!-- THIRD Modal START -->
+	<div class="modal fade" id="thirdModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<h4 class="modal-title">Simulation Results: Quantum Circuit</h4>
+				</div>
+				<div class="modal-body" id="cktCanvasDiv"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.reload()">Close</button>
+					<button type="button" class="btn btn-primary" id="show_matrix">Unitary Transformation Matrix</button>
+				</div>
+			</div>
+		</div>
+	</div>		
+	<!-- THIRD MODAL END -->
+
+	<!-- FOURTH Modal (Unitary Matrix) START-->
+	<div class="modal fade" id="unitaryMatrixModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<h4 class="modal-title">Simulation Results: Unitary Transformation Matrix</h4>
+				</div>
+				<div class="modal-body" id="unitaryMatrix"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- FOURTH Modal (Unitary Matrix) END-->
+
+<!-- 
+	\begin{bmatrix}
+		1& 2\\
+		3& 4 
+	\end{bmatrix} -->
+</body>
+</body>
+</html>
