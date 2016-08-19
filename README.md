@@ -19,14 +19,7 @@ The quantum simulator sub-system of Cherokee uses Julia to simulate a given quan
 
 is written as:
 
-```latex
-\[
-\begin{bmatrix}
-    H  & C & H \\
-    H  & N & H \\
-\end{bmatrix}
-\]
-```
+[![Matrix](http://www.sciweavers.org/tex2img.php?eq=%5Cbegin%7Bbmatrix%7D%0A%20%20%20%20H%20%20%26%20C%20%26%20H%20%5C%5C%0A%20%20%20%20H%20%20%26%20N%20%26%20H%20%5C%5C%0A%5Cend%7Bbmatrix%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)]
 The rows of the symbol matrix is equal to the number of input qubits (here 2) and the columns represent the stages of the quantum circuit.
 
 # Cherokee & ØMQ
