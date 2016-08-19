@@ -29,4 +29,11 @@ is written as:
 ```
 The rows of the symbol matrix is equal to the number of input qubits (here 2) and the columns represent the stages of the quantum circuit.
 
+# Cherokee & ØMQ
+
+Cherokee uses ØMQ’s node.js client and ØMQ’s Julia Server to transfer quantum circuit description and input states and the simulated quantum circuits’ and output state’s transfer matrices. Cherokee’s HTTP server wraps the ØMQ’s node.js client and is responsible for communicating with Cherokee’s quantum circuit simulator.
+
+# Cherokee & node.js
+
+Cherokee’s HTTP server is written in node.js which makes it inherently non-blocking. The HTTP client (browser) sends the circuit description and input state vectors using the Cherokee’s GUI (written in HTML5, CSS3 & jQuery). This circuit data is received by Cherokee’s HTTP node.js server, which passes it to the ØMQ node.js client. The ØMQ client in turn sends the circuit data to Cherokee’s ØMQ Julia server (RESP-REQ pattern) which forwards this data to Cherokee’s quantum circuit simulator.
 
