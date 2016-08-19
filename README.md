@@ -13,7 +13,7 @@ Cherokee is not a single system but consists of a number of sub-systems which wo
 
 # Cherokee & Julia
 
-The quantum simulator sub-system of Cherokee uses Julia to simulate a given quantum circuit. The program takes the description of the quantum circuit (name of the quantum gates) and input state of qubits as inputs parameters. It then coverts the names of the quantum gates to a symbol matrix. Each symbol matrix entry is replaced by its corresponding transfer matrix except for the CNOT which is computed using Cherokee’s CNOT generator algorithm. After that its computes the tensor product of the transfer matrices, computes the output state from the input state and the circuit’s transfer matrix. For example, the symbol matrix of the quantum circuit presented in the following figure
+The quantum simulator sub-system of Cherokee uses Julia to simulate a given quantum circuit. The program takes the description of the quantum circuit (name of the quantum gates) and input state of qubits as inputs parameters. It then coverts the names of the quantum gates to a symbol matrix. Each symbol matrix entry is replaced by its corresponding transfer matrix except for the CNOT which is computed using Cherokee’s CNOT generator algorithm. After that its computes the tensor product of the transfer matrices, computes the output state from the input state and the circuit’s transfer matrix. For example, the symbol matrix of the quantum circuit presented in Figure 1 is written as:
 
 [![Figure 1](https://s5.postimg.org/3v41endhj/test_ckt.png)](https://postimg.org/image/4xe7x6war/)
 
