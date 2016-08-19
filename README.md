@@ -5,6 +5,6 @@ Cherokee is a Quantum Circuit Simulator which is capable of simulating 5-qubit, 
 Cherokee is not a single system but consists of a number of sub-systems which work together in a synchronous manner in order to achieve the overall purpose of simulating the quantum circuits. Cherokee consists of the following systems:
   1.	An HTTP client which sends an HTTP POST request. 
   2.	An HTTP server which receives the sent HTTP request.
-  3.	A ZMQ client which extracts this POST data and sends it to the ZMQ Server.
-  4.	A ZMQ server which receives the data and passes it to the quantum simulator.   
+  3.	A ØMQ client which extracts this POST data and sends it to the ØMQ Server.
+  4.	A ØMQ server which receives the data and passes it to the quantum simulator.   
   5.	A quantum simulator which processes this data and created the transfer matrix and the output state. 
