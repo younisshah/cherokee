@@ -1,1 +1,1 @@
-linguist-language=Julia
+*.rb linguist-language=Julia
